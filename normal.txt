@@ -1,0 +1,27 @@
+CUDA_VISIBLE_DEVICES: 3
+INFO 02-10 12:28:55 llm_engine.py:75] Initializing an LLM engine (v0.4.0) with config: model='facebook/opt-125m', tokenizer='facebook/opt-125m', tokenizer_mode=auto, revision=None, tokenizer_revision=None, trust_remote_code=False, dtype=torch.float16, max_seq_len=1200, download_dir=None, load_format=auto, tensor_parallel_size=1, disable_custom_all_reduce=True, quantization=None, enforce_eager=True, kv_cache_dtype=auto, device_config=cuda, seed=0)
+INFO 02-10 12:28:56 selector.py:16] Using FlashAttention backend.
+INFO 02-10 12:28:59 weight_utils.py:177] Using model weights format ['*.bin']
+INFO 02-10 12:29:00 model_runner.py:104] Loading model weights took 0.2389 GB
+INFO 02-10 12:29:01 gpu_executor.py:94] # GPU blocks: 71021, # CPU blocks: 7281
+INFO 02-10 12:29:06 block_manager_v1.py:218] Automatic prefix caching is enabled.
+Testing prefix rotation and caching:
+
+=== Round 1: Using prefix1 ===
+Generated text: '\n\n1. What is the role of quantum computing in cybersecurity?\n   - What is the role of quantum computing in cybersecurity?\n   - What is the role of quantum computing in cybersecurity?\n   - What is the role'
+Generated text: '\n\n1. What is the role of artificial intelligence in the job market?\n   - What is the role of artificial intelligence in the job market?\n   - What is the role of artificial intelligence in the job market?\n '
+--------------------------------------------------
+
+=== Round 2: Using prefix2 ===
+Generated text: ' Sarah, I am a teacher at a private school in the city of New York. I am looking for a teacher who is passionate about teaching math and science. I am a math teacher at a private school in the city of New York. I am'
+Generated text: ' the head of the United States Department of Education. The president of the United States is the head of the United States Department of Education. The president of the United States is the head of the United States Department of Education. The president of the United States'
+--------------------------------------------------
+
+=== Round 3: Using prefix3 ===
+Generated text: '\n\n3. Security and Privacy:\n   - Security and privacy\n   - Privacy\n   - Privacy\n  - Privacy\n  - Privacy\n  - Privacy\n  - Privacy\n  - Privacy\n  - Privacy\n'
+Generated text: '\n\n[CONTINUOUS IMPROVEMENT AND LEARNING]\n\n1. Knowledge Update Protocol:\n   - Regular literature review\n   - Methodology updates\n   - Technical skill enhancement\n   - Professional development'
+--------------------------------------------------
+
+=== Round 4: Back to prefix1 ===
+Generated text: '\n\n1. What is the role of epigenetics in human development and disease?\n   - What is the role of epigenetics in human development and disease?\n   - What is the role of epigenetics in human development and disease'
+--------------------------------------------------
